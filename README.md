@@ -1,10 +1,8 @@
 # lab-assignment
 
 ## Student Information
-- *Name*: Nida Fatima
-- *Roll Number*: 2024eb03258
-- **Course**: Operating Systems Lab
-- **Date**: [Today's Date]
+- **Name**: Nida Fatima
+- **Date**: 31 Dec 2025
 
 ## Questions Completed
 1. Question 1: User Management
