@@ -1,1 +1,139 @@
+#### QUESTION 1 
 
+### COMMAND 1: User Identity Verification
+$ whoami
+# OUTPUT: codespace
+
+$ groups
+# OUTPUT: codespace docker pipx python oryx golang sdkman rvm php conda nvs nvm hugo ssh
+
+//Displayed my username (codespace) and all groups I belong to
+
+### COMMAND 2: Workspace Validation
+$ pwd
+# OUTPUT: /workspaces/lab-assignment
+
+$ls -la
+# OUTPUT: 
+drwxrwxrwx+ 7 codespace root      4096 Dec 31 09:53  .
+drwxr-xrwx+ 5 codespace root      4096 Dec 30 16:11  ..
+drwxrwxrwx+ 8 codespace root      4096 Dec 30 16:11  .git
+drwxrwxrwx+ 3 codespace codespace 4096 Dec 31 09:53 'Question 1'
+drwxrwxrwx+ 3 codespace codespace 4096 Dec 30 16:22 'Question 2'
+drwxrwxrwx+ 3 codespace codespace 4096 Dec 30 16:22 'Question 3'
+drwxrwxrwx+ 3 codespace codespace 4096 Dec 30 16:24 'Question 4'
+-rw-rw-rw-  1 codespace root        16 Dec 30 16:10  README.md
+
+//Shows current directory is /workspace/lab-assignment and lists all files
+
+### COMMAND 3: Environment Confirmation File
+$ echo "Linux user environment verified" > user_info.txt
+$ cat user_info.txt
+# OUTPUT: Linux user environment verified
+
+//Created and verified the content of the user_info.txt file
+
+### COMMAND 4: File Integrity Check
+$ wc -c user_info.txt
+# OUTPUT: 32 user_info.txt
+
+//Counted 32 characters, including spaces and newline character
+
+### COMMAND 5: Learning the Tools
+$ man mkdir | grep -A 2 -B 2 "verbose"
+# OUTPUT: -v, --verbose
+          print a message for each created directory
+
+//Found -v option which prints a message for each directory created. Useful for debugging directory creation
+
+### COMMAND 6: Home Directory Inspection
+$ ls -la ~ | sort
+
+# OUTPUT: 
+-rw------- 1 codespace codespace   20 Dec 30 18:37 .lesshst
+-rw------- 1 codespace codespace 2014 Dec 30 19:28 .bash_history
+-rw-r--r-- 1 codespace codespace   22 Nov 27 10:33 .zprofile
+-rw-r--r-- 1 codespace codespace   39 Dec 30 16:10 .rvmrc
+-rw-r--r-- 1 codespace codespace  126 Dec 30 16:11 .gitconfig
+-rw-r--r-- 1 codespace codespace  220 Mar 31  2024 .bash_logout
+-rw-r--r-- 1 codespace codespace  807 Mar 31  2024 .profile
+-rw-r--r-- 1 codespace codespace 4018 Nov 27 10:33 .zshrc
+-rw-r--r-- 1 codespace codespace 5885 Nov 27 10:33 .bashrc
+drwxr-x--- 1 codespace codespace 4096 Dec 30 18:37 .
+drwxr-xr-x 1 codespace codespace 4096 Dec 30 16:11 .config
+drwxr-xr-x 1 codespace codespace 4096 Nov 27 10:44 .oh-my-zsh
+drwxr-xr-x 1 root      root      4096 Dec 30 16:10 ..
+drwxr-xr-x 2 codespace root      4096 Nov 27 10:44 .minikube
+drwxr-xr-x 2 root      root      4096 Nov 27 10:36 .nvs
+drwxr-xr-x 2 root      root      4096 Nov 27 10:50 .hugo
+drwxr-xr-x 2 root      root      4096 Nov 27 10:50 .maven
+drwxr-xr-x 2 root      root      4096 Nov 27 10:50 .python
+drwxr-xr-x 2 root      root      4096 Nov 27 10:50 .ruby
+drwxr-xr-x 5 codespace codespace 4096 Dec 30 16:11 .vscode-remote
+drwxrwsr-x 2 codespace codespace 4096 Nov 27 10:36 .conda
+drwxrwsr-x 3 codespace rvm       4096 Nov 27 10:42 .rbenv
+drwxrwxr-x 1 codespace codespace 4096 Dec 30 16:11 .cache
+drwxrwxr-x 1 codespace codespace 4096 Nov 27 10:50 .local
+drwxrwxr-x 2 codespace codespace 4096 Nov 27 10:50 .jupyter
+drwxrwxr-x 2 codespace codespace 4096 Nov 27 10:50 .php
+lrwxrwxrwx 1 root      root        17 Nov 27 10:50 .dotnet -> /usr/share/dotnet
+lrwxrwxrwx 1 root      root        20 Nov 27 10:50 nvm -> /usr/local/share/nvm
+lrwxrwxrwx 1 root      root        33 Nov 27 10:50 java -> /usr/local/sdkman/candidates/java
+lrwxrwxrwx 1 root      root        47 Dec 30 16:11 .docker -> /workspaces/.codespaces/.persistedshare/.docker
+total 120
+
+//Listed home directory contents sorted alphabetically
+
+### COMMAND 7: Log Investigation
+$ echo -e "admin login successful at Dec 30 18:56\n user login failed\n admin performed system update\n regular user activity" > log.txt
+
+$ cat log.txt
+# OUTPUT: admin login successful at Dec 30 18:56
+          user login failed
+          admin performed system update
+          regular user activity
+
+$ grep "admin" log.txt
+# OUTPUT: 
+admin loggin successful at Dec 30 18:56
+admin performed system update
+
+// Found lines containing "admin" in log.txt file
+
+### COMMAND 8: System Information Check
+$ uname -r 
+# OUTPUT: 6.8.0-1030-azure
+
+// Displayed kernel version 5.15.0-91-generic
+
+### COMMAND 9: Network Connectivity Test
+$ curl -I --connect-timeout 5 https://www.google.com
+# OUTPUT: 
+HTTP/2 200 
+content-type: text/html; charset=ISO-8859-1
+content-security-policy-report-only: object-src 'none';base-uri 'self';script-src 'nonce-_zR-42VWpvbdxcHj9IEI-g' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp
+accept-ch: Sec-CH-Prefers-Color-Scheme
+p3p: CP="This is not a P3P policy! See g.co/p3phelp for more info."
+date: Wed, 31 Dec 2025 10:24:49 GMT
+server: gws
+x-xss-protection: 0
+x-frame-options: SAMEORIGIN
+expires: Wed, 31 Dec 2025 10:24:49 GMT
+cache-control: private
+set-cookie: AEC=AaJma5sSpf9u1xGhSXYivr02kbO9P3lBOfHYKPd9PKtSAHWCgPID8O2onIo; expires=Mon, 29-Jun-2026 10:24:49 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax
+set-cookie: NID=527=15YbAAvZUdmUee3DtF_kQs-1kZTJZ0pqULP1hm--65ZRQDURb0gcXnTEuSqA5DS2Uwlv33BzP__qSF6NX-dzmpMhLhPk9s7bDuwYCUMkt2ExMCGvZkciuLnDx8rXnLsrLUbbhgBBJtQYrpPYDImzhAhzn5GkuTid0609G6xQTx2AZgVPgo9ecU4NISELlF-mKxmsA_ho8gbbNxdxtcQmnP_lb949dA; expires=Thu, 02-Jul-2026 10:24:49 GMT; path=/; domain=.google.com; HttpOnly
+set-cookie: __Secure-BUCKET=CJcB; expires=Mon, 29-Jun-2026 10:24:49 GMT; path=/; domain=.google.com; Secure; HttpOnly
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+// Since ping command is not available in GitHub Codespaces environment,
+used curl to test HTTP connectivity to www.google.com.
+Received HTTP 200 response, confirming network connectivity.
+
+### COMMAND 10: System Health Awareness
+$ uptime 
+# OUTPUT: 19:41:04 up 1:59, 0 user, load average: 0.28, 0.25, 0.20
+
+// System has been running for 1 hour, 59 minutes
+ Currently, 0 users are logged in
+ Load averages (0.28, 0.25, 0.20) 
+ Values below 1.0 per CPU core indicate the system is not overloaded.
