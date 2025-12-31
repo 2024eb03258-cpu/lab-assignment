@@ -1,1 +1,69 @@
+#### QUESTION 2: 
 
+### COMMAND 1: Project Workspace Setup
+$ mkdir ~/documents
+# OUTPUT: mkdir: cannot create directory ‘/home/codespace/documents’: File exists
+
+$ echo "Created documents directory for project files"
+# OUTPUT: Created documents directory for project files 
+
+### COMMAND 2: File creation
+$cd ~/documents
+$ touch plan.txt
+$ echo "Created plan.txt file for project planning"
+# OUTPUT: Created plan.txt file for project planning
+
+### COMMAND 3: Content Addition
+$ echo "Project Alpha - Development Phase
+Start Date: 01-01-2026
+Deadline: 01-03-2026
+Team: Nida, Mahreen, Samiha
+Tasks:
+1. Analysis required
+2. System Design
+3. Presentation" > plan.txt
+
+// Created project plan with key details and tasks
+
+### COMMAND 4: File Metadata Verification
+$ ls -l plan.txt
+# OUTPUT: -rw-r--r-- 1 codespace codespace 167 Dec 31 13:26 plan.txt
+
+//File shows read/write for owner, read-only for others
+# Owner is codespace(my username) with 167 bytes size
+
+### COMMAND 5: File Duplication
+$ cp plan.txt plan_copy.txt
+$ echo "Created duplicate file for backup"
+# OUTPUT: Created duplicate file for backup
+
+### COMMAND 6: Directory Renaming
+$ cd ~
+$ mv documents project_documents
+$ echo "Renamed to better reflect project scope"
+# OUTPUT: Renamed to better reflect project scope
+
+### COMMAND 7: Archival Structure
+$ mkdir ~/project_documents/archive
+$ echo "Created archive directory for backup files"
+# OUTPUT: Created archive directory for backup files
+
+### COMMAND 8: File Organization
+$ mv ~/project_documents/plan_copy.txt ~/project_documents/archive/
+$ echo "Moved backup file to archive directory"
+# OUTPUT: Moved backup file to archive directory
+
+### COMMAND 9: Recursive Listing
+$ find ~/project_documents -type f -o -type d
+/home/codespace/project_documents
+/home/codespace/project_documents/plan.txt
+/home/codespace/project_documents/archive
+/home/codespace/project_documents/archive/plan_copy.txt
+
+//Shows complete directory tree structure
+
+### COMMAND 10: Path Verification
+$ realpath ~/project_documents/archive/plan_copy.txt
+# OUTPUT: /home/codespace/project_documents/archive/plan_copy.txt
+
+// Displayed absolute path for verification
