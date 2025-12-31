@@ -1,0 +1,4 @@
+admin login successful at Dec 30 18:56
+ user login failed
+ admin performed system update
+ regular user activity
