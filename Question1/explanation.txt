@@ -1,1 +1,16 @@
+# Question 1 Explanation
 
+This question focuses on basic Linux environment verification and system familiarity.
+
+## Key Learnings:
+1. *User Identity*: Learned to verify username and group memberships
+2. *File Operations*: Practiced file creation, content addition, and verification
+3. *System Information*: Explored commands to check kernel version and system uptime
+4. *Network Testing*: Used curl to verify internet connectivity
+5. *Help System*: Accessed manual pages to understand command options
+
+## Observations:
+- The system showed normal operation with stable uptime
+- Network connectivity was reliable with low latency to Google
+- User permissions and group memberships were correctly configured
+- The manual pages provide documentation for command options
