@@ -60,3 +60,10 @@ $ renice -n 10 66841
 # OUTPUT: 66841 (process ID) old priority 0, new priority 10
 
 # Explanation: Changed node process priority to 10 (lower priority, nicer to the system).
+
+$ ps -o pid,comm,nice -p 66841
+# OUTPUT:
+  [1]+  Done                    sleep 300
+  PID COMMAND          NI
+# Explanation: Verified new nice value is NI
+
