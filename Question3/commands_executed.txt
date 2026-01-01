@@ -102,3 +102,32 @@ $ cat ~/sample_data.txt
 # Explanation: Symbolic link deleted, original file unaffected
 # Confirms symbolic links are separate from actual data
 
+### COMMAND 10: Disk Utility Demonstration
+$ du -h --max-depth=1 ~
+# OUTPUT:
+15M     /home/codespace/.oh-my-zsh
+12K     /home/codespace/.config
+8.8M    /home/codespace/.cache
+36M     /home/codespace/.vscode-remote
+16K     /home/codespace/project_documents
+4.0K    /home/codespace/.ruby
+4.0K    /home/codespace/.hugo
+4.0K    /home/codespace/.python
+4.0K    /home/codespace/.php
+4.0K    /home/codespace/.maven
+8.0K    /home/codespace/.jupyter
+228M    /home/codespace/.local
+4.0K    /home/codespace/.minikube
+8.0K    /home/codespace/.rbenv
+8.0K    /home/codespace/.conda
+4.0K    /home/codespace/.nvs
+288M    /home/codespace
+
+$ df -h /
+# OUTPUT:
+Filesystem      Size  Used Avail Use% Mounted on
+overlay          32G  9.5G   21G  32% /
+
+# Explanation:
+# du: Shows disk usage by directory (Documents uses most space)
+# df: Shows filesystem usage (32% of 32G used, 21G available)
