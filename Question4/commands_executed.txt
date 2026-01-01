@@ -10,3 +10,35 @@ $ uptime -p
 up 2 hours, 3 minutes
 # Explanation: Alternative format showing only uptime duration.
 
+### COMMAND 2: User Process Listing
+$ ps -u $(whoami) -o pid,comm,etime
+# OUTPUT: 
+    PID COMMAND             ELAPSED
+      1 docker-init        02:05:40
+      6 sh                 02:05:39
+    388 sh                 02:05:34
+    561 sh                 02:05:34
+    570 node               02:05:34
+    592 node               02:05:33
+    607 node               02:05:32
+   1027 node               02:05:26
+   1810 sh                 02:05:20
+  20070 node               01:25:00
+  47715 sh                    18:56
+  48788 sh                    17:15
+  54687 sh                    07:43
+  55039 node                  07:41
+  55108 node                  07:37
+  55169 sh                    07:33
+  57762 bash                  04:43
+  61412 sleep                 00:00
+  61415 ps                    00:00 
+# Explanation: Lists my processes with PID, command name, and elapsed running time.
+
+### COMMAND 3: CPU Usage Analysis
+$ ps -u $(whoami) -o pid,comm,%cpu --sort=-%cpu | head -3
+# OUTPUT:
+   PID COMMAND         %CPU
+  55039 node             2.5
+    592 node             1.4
+# Explanation: Sorted processes by CPU% descending - node using most CPU (2.5%).
