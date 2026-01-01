@@ -94,3 +94,11 @@ lrwxrwxrwx 1 codespace codespace   15 Jan  1 13:37 sample_soft.txt -> sample_dat
 
 # Explanation: Shows file sizes in human-readable format (43 bytes each)
 
+### COMMAND 9: Link Deletion Test
+$ rm ~/sample_soft.txt
+$ cat ~/sample_data.txt
+# OUTPUT: Sample text data for link testing purposes
+
+# Explanation: Symbolic link deleted, original file unaffected
+# Confirms symbolic links are separate from actual data
+
