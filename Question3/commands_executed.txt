@@ -59,3 +59,18 @@ $ echo "Different inode: sample_soft.txt (inode 714723)"
 # Explanation: Symbolic links have separate inodes as they only store path information.
 # OUTPUT: Different inode: sample_soft.txt (inode 714723)
 
+### COMMAND 6: File Metadata Inspection
+$ stat ~/sample_data.txt
+# Explanation: Shows detailed metadata, including permissions, size, timestamps
+# Links count is 2 (original + hard link)
+
+# OUTPUT: 
+  File: /home/codespace/sample_data.txt
+  Size: 43              Blocks: 8          IO Block: 4096   regular file
+Device: 0,46    Inode: 714722      Links: 2
+Access: (0644/-rw-r--r--)  Uid: ( 1000/codespace)   Gid: ( 1000/codespace)
+Access: 2026-01-01 13:37:04.282953344 +0000
+Modify: 2026-01-01 13:37:04.282953344 +0000
+Change: 2026-01-01 13:37:13.113952787 +0000
+ Birth: 2026-01-01 13:37:04.282953344 +0000
+
