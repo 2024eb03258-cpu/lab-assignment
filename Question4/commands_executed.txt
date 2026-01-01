@@ -1,1 +1,12 @@
+#### QUESTION 4:
+
+### COMMAND 1: System Uptime Verification
+$ uptime
+# OUTPUT:
+17:06:30 up  2:02,  0 user,  load average: 0.29, 0.23, 0.15
+# Explanation: System running 2 hours, 3 minutes. Load averages show CPU usage.
+
+$ uptime -p
+up 2 hours, 3 minutes
+# Explanation: Alternative format showing only uptime duration.
 
