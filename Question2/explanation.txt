@@ -136,7 +136,7 @@ Creating hierarchical directory structures
 2. File Operations
 Creating files with touch
 
-Writing content with echo and redirection
+Writing content with echo
 
 Copying files with cp
 
@@ -177,23 +177,6 @@ System Administration: Managing file systems efficiently
 Development Workflows: Creating structured workspaces
 
 Documentation: Maintaining organized project documentation
-
-Environment Notes
-GitHub Codespaces Specific Behaviors:
-
-All files owned by the 'codespace' user and group
-
-Home directory path: /home/codespace/
-
-Standard Linux commands behave as expected
-
-General Linux Principles:
-
-Commands work identically across most Linux distributions
-
-File permissions follow standard Unix conventions
-
-Path structures are consistent with the Linux filesystem hierarchy
 
 Learning Outcomes
 Command Proficiency: Mastered essential file and directory management commands
