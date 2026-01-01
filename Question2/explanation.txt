@@ -28,7 +28,6 @@ Created a blank project plan file ready for content addition.
 
 ### Task 3: Content Addition
 Command:
-```bash
 echo "Project Alpha - Development Phase
 Start Date: 01-01-2026
 Deadline: 01-03-2026
@@ -65,9 +64,10 @@ Observation:
 Created a backup copy of the project plan, demonstrating file duplication for version control or backup purposes.
 
 Task 6: Directory Renaming
-Commands:
-$ cd ~
-$ mv documents project_documents
+Commands: 
+cd ~
+mv documents project_documents
+
 Explanation:
 First changed to the home directory using cd ~, then used the mv (move) command to rename documents to project_documents. The mv command serves dual purposes: moving files between locations and renaming files/directories.
 
