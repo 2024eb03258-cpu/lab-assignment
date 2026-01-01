@@ -2,8 +2,7 @@
 
 ### COMMAND 1: System Uptime Verification
 $ uptime
-# OUTPUT:
-17:06:30 up  2:02,  0 user,  load average: 0.29, 0.23, 0.15
+# OUTPUT: 17:06:30 up  2:02,  0 user,  load average: 0.29, 0.23, 0.15
 # Explanation: System running 2 hours, 3 minutes. Load averages show CPU usage.
 
 $ uptime -p
@@ -33,6 +32,7 @@ $ ps -u $(whoami) -o pid,comm,etime
   57762 bash                  04:43
   61412 sleep                 00:00
   61415 ps                    00:00 
+
 # Explanation: Lists my processes with PID, command name, and elapsed running time.
 
 ### COMMAND 3: CPU Usage Analysis
@@ -41,4 +41,22 @@ $ ps -u $(whoami) -o pid,comm,%cpu --sort=-%cpu | head -3
    PID COMMAND         %CPU
   55039 node             2.5
     592 node             1.4
-# Explanation: Sorted processes by CPU% descending - node using most CPU (2.5%).
+
+# Explanation: Sorted processes by CPU% descending - node using the most CPU (2.5%).
+
+### COMMAND 4: Background Process Execution
+$ sleep 300 &
+# OUTPUT: [1] 66841
+
+# Explanation: Started sleep command in background with &, assigned job ID 1.
+
+$ jobs
+# OUTPUT: [1]+  Running                 sleep 300 &
+
+# Explanation: jobs command shows background process is running with job ID 1.
+
+### COMMAND 5: Process Priority Management
+$ renice -n 10 66841
+# OUTPUT: 66841 (process ID) old priority 0, new priority 10
+
+# Explanation: Changed node process priority to 10 (lower priority, nicer to the system).
