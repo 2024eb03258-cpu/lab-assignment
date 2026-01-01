@@ -74,3 +74,8 @@ Modify: 2026-01-01 13:37:04.282953344 +0000
 Change: 2026-01-01 13:37:13.113952787 +0000
  Birth: 2026-01-01 13:37:04.282953344 +0000
 
+### COMMAND 7: Disk Usage Check
+$ du -sh ~
+# OUTPUT: 288M    /home/codespace
+# Explanation: Home directory uses 288M disk space
+
