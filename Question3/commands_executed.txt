@@ -1,1 +1,61 @@
+#### QUESTION 3:
+
+### COMMAND 1: File Creation
+$ echo "Sample text data for link testing purposes" > sample_data.txt
+# Explanation: Created sample_data.txt file with test content using the echo command.
+
+$ cat sample_data.txt
+# Explanation: Verified file content shows the text was written correctly.
+
+# OUTPUT: Sample text data for link testing purposes
+
+### COMMAND 2: Hard Link Creation
+$ ln sample_data.txt sample_hard.txt
+# Explanation: Created a hard link named sample_hard.txt pointing to sample_data.txt
+
+$ ls -l sample_hard.txt
+-rw-rw-rw- 2 codespace codespace 43 Jan  1 12:58 sample_hard.txt
+# Explanation: Verified hard link creation - shows 2 link counts in file metadata.
+
+# OUTPUT: Created hard link - shares the same inode as the original
+
+### COMMAND 3: Symbolic Link Creation
+$ ln -s sample_data.txt sample_soft.txt
+# Explanation: Created a symbolic link using the -s flag, which stores the path to the target.
+
+$ ls -l sample_soft.txt
+lrwxrwxrwx 1 codespace codespace 15 Jan  1 13:20 sample_soft.txt -> sample_data.txt
+# Explanation: Symbolic link shows 'l' permission type and arrow pointing to target.
+
+###  COMMAND 4: Inode Verification
+$ cd ~
+# Explanation: go to home directory
+
+$ echo "Sample text data for link testing purposes" > sample_data.txt
+# Explanation: Create the files
+
+$ ln sample_data.txt sample_hard.txt
+$ ln -s sample_data.txt sample_soft.txt
+
+$ ls -i sample_data.txt sample_hard.txt sample_soft.txt
+# Explanation: Display the inode numbers
+
+# OUTPUT: 
+714722 sample_data.txt  
+714722 sample_hard.txt  
+714723 sample_soft.txt
+
+# Explanation: Hard link shares the same inode (714722), symbolic link has a different inode (714723)
+
+### COMMAND 5: Inode Analysis
+$ echo "Analyzing inode numbers from previous task:"
+# OUTPUT: Analyzing inode numbers from previous task:
+
+$ echo "Files sharing same inode: sample_data.txt and sample_hard.txt (inode 714722)"
+# Explanation: Hard links share the same inode because they reference identical data.
+# OUTPUT: Files sharing same inode: sample_data.txt and sample_hard.txt (inode 714722)
+
+$ echo "Different inode: sample_soft.txt (inode 714723)"
+# Explanation: Symbolic links have separate inodes as they only store path information.
+# OUTPUT: Different inode: sample_soft.txt (inode 714723)
 
