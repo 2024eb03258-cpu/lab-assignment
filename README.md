@@ -2,40 +2,68 @@
 
 ## Student Information
 - **Name**: Nida Fatima
-- **Date**: 31 Dec 2025
+- **Course**: BSC Computer Science
+- **Subject**: Command Line Interfaces and Scripting
+- **University**: BITS Pilani 
+- **Submission Date**: January 2, 2026
+- **Github Repository**: 
+
+## Assignment Overview
+This repository contains complete solutions for the Linux Systems Lab Assignment, consisting of 4 questions (40 total tasks). All work was performed within my user account without making any system configuration changes
 
 ## Questions Completed
-1. Question 1: User Management
-2. Question 2: Process Management
-3. Question 3: System Monitoring
-4. Question 4: File Operations
+1. Question 1: User Management(10 tasks)
+2. Question 2: Process Management(10 tasks)
+3. Question 3: System Monitoring(10 tasks)
+4. Question 4: File Operations(10 tasks)
+**Total:** 40 tasks completed
 
 ## Repository Structure
-Each folder contains:
-- `commands_executed.txt` - All commands used
-- `explanation.txt` - Step-by-step explanations
-- `screenshots/` - Visual proof of execution
 
-- ## Question 1: Environment Verification
+### Files in This Folder:
+1. **`commands_outputs.txt`** - Complete commands with outputs and explanations for all 10 tasks.
+2. **`explanation.md`** - Detailed conceptual explanations and analysis of each task.
+3. **`screenshots/`** - Directory containing execution screenshots (10 PNG files).
 
-### Key Tasks Completed:
+### Screenshot Features:
+- Clear terminal output visibility
+- Timestamp and username context
+- Command and output pairing
+
+### Platform Details:
+- **Platform:** GitHub Codespaces (Ubuntu-based container)
+- **Shell:** bash (/bin/bash)
+- **Kernel:** 6.8.0-1030-azure
+- **Distribution:** Ubuntu 22.04.3 LTS
+- **Default User:** codespace
+- **Constraints:** No system configuration changes made
+
+## Question Summaries
+
+### Question 1: Environment Verification
+**Objective:** Verify basic Linux environment and user workspace.
+
+### Key Tasks:
 1. User identity verification (`whoami`, `groups`)
 2. Workspace validation (`pwd`, `ls -la`)
-3. Environment confirmation file creation (`user_info.txt`)
-4. File integrity (`wc -c`)
-5. Learning tools (`man mkdir`)
-6. Home directory inspection (`ls -la ~ | sort`)
-7. Log investigation (`grep "admin" log.txt`)
-8. System information check (`uname -r`)
-9. Network connectivity test (`curl` alternative to `ping`)
-10. System health awareness (`uptime`)
+3. File creation and integrity check
+4. Manual page exploration (`man mkdir`)
+5. Home directory inspection
+6. Log file analysis (`grep`)
+7. System information (`uname`)
+8. Network connectivity testing (using `curl` instead of `ping`)
+9. System health monitoring (`uptime`)
+
+**Files Created:** `user_info.txt`, `log.txt`
 
 # Note:
-- Used `curl` instead of `ping` for network testing (ICMP blocked in Codespaces)
+- Used `curl` instead of `ping` for network testing (ICMP blocked in Codespaces).
 
 
 ## Question 2: File and Directory Management
-### Key Tasks Completed:
+**Objective:** Demonstrate file system organization skills.
+
+### Key Tasks:
 1. Project workspace setup (`mkdir documents`)
 2. File creation (`touch plan.txt`)
 3. Content addition (project plan text)
@@ -47,35 +75,41 @@ Each folder contains:
 9. Recursive listing (`find`)
 10. Path verification (`realpath`)
 
-### Skills used:
-- Directory structure creation and management
-- File operations (create, copy, move, rename)
-- Path navigation and verification
-- File organization best practices
+**Files Created:** `plan.txt`, `plan_copy.txt`
+**Directories Created:** `project_documents/`, `project_documents/archive/`
 
+### Skills used:
+- Directory structure creation and management.
+- File operations (create, copy, move, rename).
+- Path navigation and verification.
+- File organization best practices.
 
 ## Question 3: Links and Disk Usage
-### Key Tasks Completed:
-1. File creation (`sample_data.txt`)
-2. Hard link creation (`ln`)
-3. Symbolic link creation (`ln -s`)
-4. Inode verification (`ls -i`)
-5. Inode analysis (understanding link types)
-6. File metadata inspection (`stat`)
-7. Disk usage check (`du -sh`)
-8. File size overview (`ls -lh`)
-9. Link deletion test (`rm` symbolic link)
-10. Disk utility demonstration (`du`, `df`)
+**Objective:** Understand Linux file linking and storage analysis.
+
+### Key Tasks:
+1. Hard link creation (`ln`)
+2. Symbolic link creation (`ln -s`)
+3. Inode verification (`ls -i`)
+4. Inode analysis (understanding link types).
+5. File metadata inspection (`stat`)
+6. Disk usage check (`du -sh`)
+7. File size overview (`ls -lh`)
+8. Link deletion test (`rm` symbolic link)
+9. Disk utility demonstration (`du`, `df`)
+
+**Files Created:** `sample_data.txt`, `sample_hard.txt`, `sample_soft.txt`
 
 ### Concepts Understood:
-- Difference between hard links and symbolic links
-- Inode sharing and file system concepts
-- Disk usage analysis and monitoring
-- File system hierarchy and space management
-
+- Difference between hard links and symbolic links.
+- Inode sharing and file system concepts.
+- Disk usage analysis and monitoring.
+- File system hierarchy and space management.
 
 ## Question 4: Process and System Monitoring
-### Key Tasks Completed:
+**Objective:** Monitor system resources and manage processes.
+
+### Key Tasks:
 1. System uptime verification (`uptime`)
 2. User process listing (`ps -u`)
 3. CPU usage analysis (`ps --sort=-%cpu`)
@@ -87,29 +121,24 @@ Each folder contains:
 9. Output redirection (`>` to `system_report.txt`)
 10. Disk usage visualization (`du -h | sort -hr`)
 
-### System Administration Skills:
-- Process monitoring and management
-- System resource analysis (CPU, memory, disk)
-- Background job control
-- Priority scheduling with nice values
-- System report generation
+**Files Created:** `system_report.txt`.
 
 ---
 
-## Technical Environment Details
-- **Platform:** GitHub Codespaces
-- **Default Username:** codespace
-- **Shell:** bash
-- **Linux Distribution:** Ubuntu-based container
-- **Constraints:** No system configuration changes made
+### System Administration Skills:
+- Process monitoring and management.
+- System resource analysis (CPU, memory, disk).
+- Background job control.
+- Priority scheduling with nice values.
+- System report generation.
 
 ---
 
 ## Key Learnings
-1. **Environment Awareness:** Understanding differences between physical systems and containers
-2. **Tool Proficiency:** Mastery of essential Linux commands for system administration
-3. **Problem Solving:** Adapting to constraints (e.g., using `curl` when `ping` is unavailable)
-4. **Documentation:** Clear explanation of commands and their outputs
-5. **Practical Application:** Real-world system administration scenarios
+1. **Environment Awareness:** Understanding differences between physical systems and containers.
+2. **Tool Proficiency:** Mastering essential Linux commands for system administration.
+3. **Problem Solving:** Adapting to constraints (e.g., using `curl` when `ping` is unavailable).
+4. **Documentation:** Clear explanation of commands and their outputs.
+5. **Practical Application:** Real-world system administration scenarios.
 
 ---
