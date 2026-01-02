@@ -1,1 +1,53 @@
+# Question 4: System Monitoring and Process Management - Explanations
+
+## Overview
+This exercise demonstrates comprehensive system monitoring and process management capabilities in Linux. Through 10 practical tasks, I explored system resource analysis, process control, and administrative tools essential for maintaining and troubleshooting Linux systems.
+
+---
+
+## Detailed Task Analysis
+
+### COMMAND 1: System Uptime Verification
+Observation: The system has been running for 45 minutes with load averages of 0.18, 0.57, 0.59 over 1, 5, and 15-minute intervals. Load averages below 1.0 indicate a system not under CPU pressure. The "0 users" display is characteristic of containerized environments like GitHub Codespaces, where traditional user sessions aren't tracked in the same way as physical systems.
+
+### COMMAND 2: User Process Listing
+Observation: Multiple processes, including docker-init, shell sessions (sh), Node.js applications, and bash shells, are running under my user account. The elapsed times show processes have been running from a few seconds to over 11 hours, indicating a mix of long-running services and temporary command executions. This output helps us understand what applications are active and their runtime characteristics.
+
+### COMMAND 3: CPU Usage Analysis
+Observation: Node.js processes are the primary CPU consumers, with PID 592 using 2.3% CPU and PID 569 using 0.4%. These low percentages indicate efficient resource utilization. The ability to sort processes by CPU usage helps quickly identify potential performance data or runaway processes that might need attention.
+
+### COMMAND 4: Background Process Execution
+Observation: Successfully launched a `sleep 300` command in the background, which was assigned job ID [1] and process ID 9954. The `jobs` command confirmed its running status. This shows practical job control, allowing long-running tasks to execute without blocking the terminal interface.
+
+### COMMAND 5: Process Priority Management
+Observation: Changed the nice value of process 9954 from default (0) to 10, lowering its CPU scheduling priority. The verification showed the NI (nice) value updated successfully. Nice values range from -20 (highest priority) to 19 (lowest priority), with higher values making processes more "nice" by yielding CPU time to other processes.
+
+### COMMAND 6: Memory Usage Monitoring
+Observation: The system has 7.8GB of total RAM, with 1.7GB actively used and only 169MB completely free. However, 6.0GB is available (including cache that can be reclaimed), indicating healthy memory management. The absence of swap space (0B) is notable - while this can improve performance, it also means there's no memory overflow buffer, which could cause issues under heavy load.
+
+### COMMAND 7: Disk Space Inspection
+Observation: The overlay filesystem shows a total capacity of 32 GB, with 9.5GB used (29.4%), leaving 22.5 GB available. Being at 32% usage is well within safe limits (typically, concern arises above 80%). The overlay filesystem type indicates this is a container environment with copy-on-write functionality.
+
+### COMMAND 8: Shell Identification
+Observation: Confirmed using bash as indicated by both the $SHELL environment variable and process examination. The current shell has PID 6357. Understanding the shell environment is crucial for script compatibility and feature availability.
+
+### COMMAND 9: Output Redirection
+Observation: Successfully created a system report file containing kernel information and the current timestamp. The kernel version (6.8.0-1030-azure) reveals this is an Azure-based Ubuntu system. Output redirection skills are essential for logging, automation, and documentation purposes in system administration.
+
+###  COMMAND 10: Disk Usage Visualization
+Observation: The project_documents directory uses minimal space (16K total), with the archive subdirectory consuming half of that (8K). The df -hT output revealed multiple filesystem types: overlay for the main system, tmpfs for temporary memory-based filesystems, and ext4 for traditional disk partitions. This mixed environment is typical of modern containerized deployments.
+
+---
+
+### System Administration Relevance
+Each command demonstrated has direct real-world applications:
+- Uptime monitoring for system stability assessment
+- Process listing for security audits and troubleshooting
+- Resource analysis for capacity planning
+- Priority management for performance optimization
+- Disk monitoring for storage management and cleanup planning
+
+---
+
+## Practical Applications
 
