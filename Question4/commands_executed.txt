@@ -1,69 +1,125 @@
-#### QUESTION 4:
+####QUESTION 4:
 
 ### COMMAND 1: System Uptime Verification
 $ uptime
-# OUTPUT: 17:06:30 up  2:02,  0 user,  load average: 0.29, 0.23, 0.15
-# Explanation: System running 2 hours, 3 minutes. Load averages show CPU usage.
+# OUTPUT:
+10:45:12 up 45 min,  0 user,  load average: 0.18, 0.57, 0.59
+# Explanation: System running 45 minutes. Load averages show CPU usage.
 
 $ uptime -p
-up 2 hours, 3 minutes
+up 45 minutes
 # Explanation: Alternative format showing only uptime duration.
 
 ### COMMAND 2: User Process Listing
 $ ps -u $(whoami) -o pid,comm,etime
 # OUTPUT: 
-    PID COMMAND             ELAPSED
-      1 docker-init        02:05:40
-      6 sh                 02:05:39
-    388 sh                 02:05:34
-    561 sh                 02:05:34
-    570 node               02:05:34
-    592 node               02:05:33
-    607 node               02:05:32
-   1027 node               02:05:26
-   1810 sh                 02:05:20
-  20070 node               01:25:00
-  47715 sh                    18:56
-  48788 sh                    17:15
-  54687 sh                    07:43
-  55039 node                  07:41
-  55108 node                  07:37
-  55169 sh                    07:33
-  57762 bash                  04:43
-  61412 sleep                 00:00
-  61415 ps                    00:00 
-
+ PID COMMAND             ELAPSED
+      1 docker-init           11:25
+      7 sh                    11:25
+    387 sh                    11:20
+    560 sh                    11:20
+    569 node                  11:20
+    592 node                  11:19
+    606 node                  11:18
+   1033 node                  11:12
+   1712 sh                    10:23
+   6357 bash                  01:26
+   7411 sh                    00:00
+   7412 cpuUsage.sh           00:00
+   7415 sleep                 00:00
+   7422 sleep                 00:00
+   7425 ps                    00:00  
 # Explanation: Lists my processes with PID, command name, and elapsed running time.
 
 ### COMMAND 3: CPU Usage Analysis
 $ ps -u $(whoami) -o pid,comm,%cpu --sort=-%cpu | head -3
 # OUTPUT:
-   PID COMMAND         %CPU
-  55039 node             2.5
-    592 node             1.4
-
-# Explanation: Sorted processes by CPU% descending - node using the most CPU (2.5%).
+PID COMMAND         %CPU
+ 592 node             2.3
+ 569 node             0.4
+# Explanation: Sorted processes by CPU% descending - node using the most CPU (2.3%).
 
 ### COMMAND 4: Background Process Execution
 $ sleep 300 &
-# OUTPUT: [1] 66841
-
+# OUTPUT: 
+[1] 9954
 # Explanation: Started sleep command in background with &, assigned job ID 1.
 
 $ jobs
-# OUTPUT: [1]+  Running                 sleep 300 &
-
+[1]+  Running                 sleep 300 &
 # Explanation: jobs command shows background process is running with job ID 1.
 
 ### COMMAND 5: Process Priority Management
-$ renice -n 10 66841
-# OUTPUT: 66841 (process ID) old priority 0, new priority 10
+$ renice -n 10 9954
+# OUTPUT: 9954 (process ID) old priority 0, new priority 10
+# Explanation: Changed node process (PID 9954) priority to nice value 10.
 
-# Explanation: Changed node process priority to 10 (lower priority, nicer to the system).
-
-$ ps -o pid,comm,nice -p 66841
+$ ps -o pid,comm,nice -p 3797
 # OUTPUT:
-  [1]+  Done                    sleep 300
-  PID COMMAND          NI
-# Explanation: Verified new nice value is NI
+ PID COMMAND          NI
+ 9954 sleep            10
+# Explanation: Verified new nice value is 10 (lower priority)
+# NI column shows nice value where a higher mean is lower CPU priority. 
 
+### COMMAND 6: Memory Usage Monitoring
+$ free -h
+# OUTPUT:
+               total        used        free      shared  buff/cache   available
+Mem:           7.8Gi       1.7Gi       169Mi        62Mi       6.2Gi       6.0Gi
+Swap:             0B          0B          0B
+
+# Explanation: 7.8Gi total RAM, 1.7Gi used, 169Mi free. Swap usage indicates memory pressure.
+
+### COMMAND 7: Disk Space Inspection
+$ df -h /home
+# OUTPUT:
+[1]+  Done                    sleep 300
+Filesystem      Size  Used Avail Use% Mounted on
+overlay          32G  9.5G   21G  32% /
+
+# Explanation: Home partition has 32G total, 32% used (9.5G), 21G available.
+
+### COMMAND 8: Shell Identification
+$ echo $SHELL
+# OUTPUT:
+/bin/bash
+# Explanation: SHELL environment variable shows I'm using bash shell.
+
+$ ps -p $$
+# OUTPUT:
+  PID TTY          TIME CMD
+  6357 pts/0    00:00:00 bash 
+# Explanation: $$ shows current process ID, confirming bash is my shell.
+
+### COMMAND 9: Output Redirection
+$ uname -a > system_report.txt
+# Explanation: Redirected system information to the system_report.txt file.
+
+$ date >> system_report.txt
+# Explanation: Appended the current date/time to the same file using >>.
+
+$ cat system_report.txt
+# OUTPUT:
+Linux codespaces-212d32 6.8.0-1030-azure #35~22.04.1-Ubuntu SMP Mon May 26 18:08:30 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+Fri Jan  2 11:05:42 UTC 2026
+
+# Explanation: The file contains combined system info and timestamp.
+
+### COMMAND 10: Disk Usage Visualization
+$ du -h ~/project_documents | sort -hr | head -5
+# OUTPUT:
+16K     /home/codespace/project_documents
+8.0K    /home/codespace/project_documents/archive
+# Explanation: Sorted disk usage by size - Documents largest at 16K.
+
+$ df -hT
+# OUTPUT:
+Filesystem     Type     Size  Used Avail Use% Mounted on
+overlay        overlay   32G  9.5G   21G  32% /
+tmpfs          tmpfs     64M     0   64M   0% /dev
+shm            tmpfs     64M     0   64M   0% /dev/shm
+/dev/root      ext4      29G   22G  7.7G  74% /vscode
+/dev/sda1      ext4      44G  2.2G   40G   6% /tmp
+/dev/loop4     ext4      32G  9.5G   21G  32% /workspaces
+
+# Explanation: Shows filesystem types with disk usage. ext4 for system, tmpfs for memory.
