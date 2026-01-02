@@ -6,7 +6,7 @@
 - **Subject**: Command Line Interfaces and Scripting
 - **University**: BITS Pilani 
 - **Submission Date**: January 2, 2026
-- **Github Repository**: 
+- **Github Repository**: https://github.com/2024eb03258-cpu/lab-assignment.git
 
 ## Assignment Overview
 This repository contains complete solutions for the Linux Systems Lab Assignment, consisting of 4 questions (40 total tasks). All work was performed within my user account without making any system configuration changes
