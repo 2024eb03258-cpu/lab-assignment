@@ -39,7 +39,7 @@ Observation: The project_documents directory uses minimal space (16K total), wit
 
 ---
 
-### System Administration Relevance
+### System Administration
 Each command demonstrated has direct real-world applications:
 - Uptime monitoring for system stability assessment
 - Process listing for security audits and troubleshooting
